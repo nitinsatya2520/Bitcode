@@ -1,0 +1,139 @@
+/* Service Cards Container */
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Evenly spaces the cards */
+    padding: 30px;
+    gap: 20px; /* Creates space between the cards */
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Service Card Item Styling */
+  .service-card {
+    width: 450px; /* Card width */
+    height: 350px; /* Card height */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures the image doesn't overflow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative; /* To position the overlay or image hover effect */
+  }
+  
+  /* Card Link Styling */
+  .service-card .card-link {
+    text-decoration: none; /* Removes the underline from the link */
+    color: inherit; /* Inherits the color of the text */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures the entire card is clickable */
+  }
+  
+  /* Hover effect */
+  .service-card:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+  }
+  
+  /* Image Styling */
+  .service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 75%; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and scale */
+    z-index: 1; /* Ensures the image is below the text */
+  }
+  
+  /* Overlay Text Styling */
+  .service-card .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem; /* Increased text size */
+    font-weight: bold;
+    z-index: 2; /* Ensures the text is above the image */
+    background: rgba(0, 15, 19, 0.541); /* Semi-transparent background for better readability */
+    padding: 200px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+  }
+  
+  /* Show Image on Text Hover */
+  .service-card:hover img {
+    opacity: 1; /* Show the image */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  .service-card:hover .overlay-text {
+    background: rgba(0, 0, 0, 0.027);
+    opacity: 1; /* Ensure text remains visible */
+  }
+  
+  /* Title Styling */
+  .service-card h3 {
+    font-size: 1.8rem; /* Larger title size */
+    margin: 20px 0 10px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize; /* Capitalize the title for style */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Handles overflow for long titles */
+  }
+
+  .service-card:hover h3 {
+    color: #000000;
+  }
+  
+  /* Description Styling */
+  .service-card p {
+    font-size: 1.1rem; /* Larger description text */
+    color: #666;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 20px; /* Space between description and bottom of card */
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Handles overflow for long descriptions */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits description to 3 lines */
+    -webkit-box-orient: vertical;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-cards {
+      justify-content: center; /* Center the cards on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-cards {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .service-card {
+      width: 90%; /* Make cards take up more space on small screens */
+      margin-bottom: 20px;
+    }
+  
+    .service-card h3 {
+      font-size: 1.5rem; /* Smaller title font on smaller screens */
+    }
+  
+    .service-card p {
+      font-size: 1rem; /* Smaller description font on smaller screens */
+    }
+  }
+  

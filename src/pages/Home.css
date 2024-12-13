@@ -1,0 +1,129 @@
+/* Home Page Styling */
+.home {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fffffff1;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    
+}
+
+/* Logo Section */
+.logoa img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: auto;
+    margin-bottom: 30px;
+    transition: transform 0.6s ease;
+}
+
+.logoa img:hover {
+    transform: scale(1.2);
+}
+
+/* Welcome Text */
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #303030;
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: #111111;
+    margin: 10px 0;
+    font-weight: 700;
+    
+    
+}
+
+p {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin: 20px 0 40px;
+    font-weight: 300;
+}
+
+/* Card Styling */
+.card {
+    margin: 30px auto;
+    background-color: black;
+    width: 70%; /* Adjust card width */
+    height: auto; /* Adjust card height */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    background-color:#00b7ff00;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease-in;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent overlay */
+    z-index: -1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 119, 255, 0.075);
+}
+
+.card h3, .card p {
+    color: rgb(39, 39, 39);
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .logoa img {
+        width: 200px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Styling for Services Section */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
+}
